@@ -1,10 +1,11 @@
 /*  
- *  hello-1.c - The simplest kernel module.
+ *  hello.c - The simplest kernel module.
  */
 #include <linux/module.h>	/* Needed by all modules */
 #include <linux/kernel.h>	/* Needed for KERN_INFO */
+#include <linux/init.h>		/* Needed by module_init */
 
-int init_module(void)
+static int __init hello_init (void)
 {
 	printk(KERN_INFO "Hello world 1.\n");
 
@@ -14,7 +15,10 @@ int init_module(void)
 	return 0;
 }
 
-void cleanup_module(void)
+static void __exit hello_exit(void)
 {
 	printk(KERN_INFO "Goodbye world 1.\n");
 }
+
+module_init(hello_init);
+module_exit(hello_exit);
