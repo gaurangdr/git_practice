@@ -1,4 +1,4 @@
-/* line added to delete  
+/*  line added to delete  
  *  hello.c - The simplest kernel module.
  */
 #include <linux/module.h>	/* Needed by all modules */
@@ -8,7 +8,7 @@
 static int __init hello_init (void)
 {
 	printk(KERN_INFO "Hello world 1.\n");
-
+	printk(KERN_INFO "This code executed when module installed\n");
 	/*
 	 * A non 0 return means init_module failed; module can't be loaded.
 	 */
