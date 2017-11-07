@@ -1,4 +1,4 @@
-/*  
+/* line added to delete  
  *  hello.c - The simplest kernel module.
  */
 #include <linux/module.h>	/* Needed by all modules */
